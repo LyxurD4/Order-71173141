@@ -34,21 +34,21 @@ try {
     <br>
     <a href="index.php">Terug</a>
     <?php
-        if(isset($_GET["id"])) {
-            $id = $_GET["id"];
-            $informatie = $conn->query("select * from series where id = $id");
-        } 
-        foreach($informatie as $row) { ?>
-            <h1><?php echo $row["title"]; echo " - "; echo $row["rating"] ?></h1>
-            <ul>
-                <li>Awards?<?php echo " - "; echo $row["has_won_awards"] ?></li>
-                <li>Awards?<?php echo " - "; echo $row["seasons"] ?></li>
-                <li>Awards?<?php echo " - "; echo $row["country"] ?></li>
-                <li>Awards?<?php echo " - "; echo $row["language"] ?></li>
-            </ul>
-            <p>
-                <?php echo $row["description"] ?>
-            </p>
+    if(isset($_GET["id"])) {
+        $id = $_GET["id"];
+        $informatie = $conn->query("select * from series where id = $id");
+    } 
+    foreach($informatie as $row) { ?>
+        <h1><?php echo $row["title"]; echo " - "; echo $row["rating"] ?></h1>
+        <ul>
+            <li>Awards?<?php echo " - "; echo $row["has_won_awards"] ?></li>
+            <li>Awards?<?php echo " - "; echo $row["seasons"] ?></li>
+            <li>Awards?<?php echo " - "; echo $row["country"] ?></li>
+            <li>Awards?<?php echo " - "; echo $row["language"] ?></li>
+        </ul>
+        <p>
+            <?php echo $row["description"] ?>
+        </p>
         <?php } ?>
 </body>
 </html>

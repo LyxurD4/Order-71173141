@@ -23,8 +23,8 @@ if (isset($_POST["unset"])) {
     unset($_GET["filmsTitelSortering"]);
     unset($_GET["duurSortering"]);
 }
-$series = $conn->query("select title, rating, id from series") or die ("Error querying.");
-$films = $conn->query("select titel, duur, id from films") or die ("Error querying");
+$series = $conn->query("select title, rating, id from series");
+$films = $conn->query("select titel, duur, id from films");
 
 $seriesTitelSortering = $_GET["seriesTitelSortering"];
 $ratingSortering = $_GET["ratingSortering"];
@@ -33,13 +33,13 @@ $filmsTitelSortering = $_GET["filmsTitelSortering"];
 $duurSortering = $_GET["duurSortering"];
 
 if(isset($_GET["ratingSortering"])) {
-    $series = $conn->query("select title, rating, id from series order by $ratingSortering DESC") or die ("Error bij sorteren");
+    $series = $conn->query("select title, rating, id from series order by $ratingSortering DESC");
 } elseif (isset($_GET["seriesTitelSortering"])) {
-    $series = $conn->query("select title, rating, id from series order by $seriesTitelSortering") or die ("Error bij sorteren");
+    $series = $conn->query("select title, rating, id from series order by $seriesTitelSortering");
 } elseif (isset($_GET["filmsTitelSortering"])) {
-    $films = $conn->query("select titel, duur, id from films order by $filmsTitelSortering") or die ("Error bij sorteren");
+    $films = $conn->query("select titel, duur, id from films order by $filmsTitelSortering");
 } elseif (isset($_GET["duurSortering"])) {
-    $films = $conn->query("select titel, duur, id from films order by $duurSortering DESC") or die ("Error bij sorteren");
+    $films = $conn->query("select titel, duur, id from films order by $duurSortering DESC");
 }
 ?>
 
