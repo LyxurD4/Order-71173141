@@ -49,6 +49,6 @@ try {
         <p>
             <?php echo $row["description"] ?>
         </p>
-        <?php } ?>
+    <?php } ?>
 </body>
 </html>
